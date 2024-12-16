@@ -1,0 +1,14 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+
+  postgres:
+    image: postgres:17
+    container_name: pg
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
